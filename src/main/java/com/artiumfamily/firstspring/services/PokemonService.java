@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class PokemonService {
-    public String getPokemon(){
+    public String getAllPokemon(){
         return "Pikachu";
     }
 }

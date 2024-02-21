@@ -17,6 +17,6 @@ public class MainController {
 
     @GetMapping(value = "/")
     public String getPokemon() {
-        return service.getPokemon();
+        return service.getAllPokemon();
     }
 }
