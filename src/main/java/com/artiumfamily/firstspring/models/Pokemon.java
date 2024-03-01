@@ -1,11 +1,25 @@
 package com.artiumfamily.firstspring.models;
 
-public class Pokemon {
-    private String name;
-    private String element_type;
+import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
-    public Pokemon(String n, String t) {
-        name = n;
-        element_type = t;
+@Builder
+@Getter
+@Setter
+public class Pokemon {
+
+    private String name;
+
+    private String elementType;
+
+    public Pokemon(String name) {
+        this.name = name;
+    }
+
+    public Pokemon(String name, String type) {
+        this.name = name;
+        this.elementType = type;
     }
 }
