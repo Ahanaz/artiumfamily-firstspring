@@ -19,6 +19,7 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 class PokemonServiceTest {
 
+    public static final String POKEAPI_PIKACHU_URL = "https://pokeapi.co/api/v2/pokemon/pikachu";
     @Mock
     RestTemplate restTemplate;
 
@@ -49,7 +50,9 @@ class PokemonServiceTest {
                 .elementType("electric")
                 .build();
 
-        when(restTemplate.getForObject("https://pokeapi.co/api/v2/pokemon/pikachu", PokemonDTO.class)
+        when(restTemplate.getForObject(
+                POKEAPI_PIKACHU_URL,
+                PokemonDTO.class)
         ).thenReturn(pikachuDto);
 
         assertEquals(pikachu, service.getPokemonByName("pikachu"));

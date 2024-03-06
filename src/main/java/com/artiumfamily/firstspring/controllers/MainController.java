@@ -26,8 +26,6 @@ public class MainController {
 
     @GetMapping("/pokemon/{name}")
     public Pokemon getPokemonByName(@PathVariable String name) {
-        return Pokemon.builder()
-                .name(name)
-                .build();
+        return service.getPokemonByName(name);
     }
 }
