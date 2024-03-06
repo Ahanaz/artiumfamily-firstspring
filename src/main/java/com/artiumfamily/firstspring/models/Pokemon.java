@@ -1,13 +1,10 @@
 package com.artiumfamily.firstspring.models;
 
-import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 @Builder
-@Getter
-@Setter
+@Data
 public class Pokemon {
 
     private String name;
