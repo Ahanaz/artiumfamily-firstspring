@@ -33,15 +33,15 @@ class PokemonServiceTest {
 
     @Test
     void getPokemonByName_returnsPokemon_onSuccess() {
-        PokemonDTO pikachuDto = PokemonDTO.builder()
+        PokemonDTO mockedPikachuDto = PokemonDTO.builder()
                 .name("pikachu")
                 .types(List.of(
-                                TypeListElement.builder()
-                                        .type(Type.builder()
-                                                .name("electric")
-                                                .build())
-                                        .build()
-                        )
+                        TypeListElement.builder()
+                            .type(Type.builder()
+                                    .name("electric")
+                                    .build())
+                            .build()
+                    )
                 )
                 .build();
 
@@ -53,7 +53,7 @@ class PokemonServiceTest {
         when(restTemplate.getForObject(
                 POKEAPI_PIKACHU_URL,
                 PokemonDTO.class)
-        ).thenReturn(pikachuDto);
+        ).thenReturn(mockedPikachuDto);
 
         assertEquals(pikachu, service.getPokemonByName("pikachu"));
     }
